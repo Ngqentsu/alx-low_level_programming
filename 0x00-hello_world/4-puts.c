@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - C program that prints exactly "Programming is like building a multilingual puzzle
+ * main - C program that prints the axact line using puts function
  *
  * Return: Always 0 (Success)
  */
