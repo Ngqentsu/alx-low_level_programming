@@ -1,0 +1,1 @@
+The program will assign a random number to the variable n each time it is executed, program that prints the alphabet in lowercase,and then in uppercase, program that prints all single digit numbers and program that prints all possible combinations of single-digit numbers
