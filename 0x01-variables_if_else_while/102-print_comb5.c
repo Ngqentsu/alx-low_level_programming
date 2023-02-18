@@ -7,42 +7,38 @@
  */
 int main(void)
 {
-int num1 = 0;
-int num2;
-int num3;
-
-int num11;
-int num22;
-int num33;
+int num1;
+int num2 = 0;
  
-while (num1 <= 98)
+int num11;
+int num22 = 0;
+
+while (num2 < 100 && num22 < 100)
 {
-num2 = (num1/10 * '0');
-num3 = (num1%10 * '0');
+num1 = 0;
 num11 = 0;
-
-while (num11 <= 99)
+ 
+while (num1 < 100 && num11 < 100)
 {
-num22 = (num11/10 * '0');
-num33 = (num11%10 * '0');
-
-if (num1 < num11)
+if (num2 != num1 && num2 < num1 && num22 != num11 && num22 < num11)
 {
-putchar(num2);
-putchar(num3);
+putchar(num2 + '0');
+putchar(num1 + '0');
 putchar(' ');
-putchar(num22);
-putchar(num33);
+putchar(num22 + '0');
+putchar(num11 + '0');
 
-if (num1 != 98)
+if (num1 != 98 && num11 != 98)
 {
 putchar(',');
 putchar(' ');
 }
 }
+num1++;
 num11++;
 }
-num1++;
+num2++;
+num22++;
 }
 putchar('\n');
 return (0);
