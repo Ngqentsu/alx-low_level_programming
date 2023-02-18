@@ -22,7 +22,7 @@ putchar(num1 + '0');
 
 if (num1 + num2 != 17)
 {
-putchar(';');
+putchar(',');
 putchar(' ');
 }
 }
