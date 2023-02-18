@@ -28,7 +28,7 @@ putchar(' ');
 putchar(num22 + '0');
 putchar(num11 + '0');
 
-if (num1 + num2 != 17 && num11 + num22 != 17)
+if (num1 + num2 != 99 && num11 + num22 != 99)
 {
 putchar(',');
 putchar(' ');
