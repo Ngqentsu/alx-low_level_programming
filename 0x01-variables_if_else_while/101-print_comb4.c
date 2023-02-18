@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-/**                                                                                                                                                                     
- * main - program that prints all possible different combinations of two digits                                                                                         
- *                                                                                                                                                                      
- * Return: Always 0 (Success)                                                                                                                                           
+/**
+ * main - program that prints all possible different combinations of 3 digits 
+ *
+ * Return: Always 0 (Success) 
  */
 int main(void)
 {
 int num1;
 int num2;
-int num3 = 0; 
+int num3 = 0;
 
 while (num3 < 10)
 {
@@ -25,7 +25,7 @@ putchar(num3 + '0');
 putchar(num2 + '0');
 putchar(num1 + '0');
 
-if (num1 * num2 * num3 != 9 * 8 * 7)
+if (num1*num2*num3 != 9*8*7)
 {
 putchar(',');
 putchar(' ');
