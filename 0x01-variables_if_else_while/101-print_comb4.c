@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - program that prints all possible different combinations of 3 digits 
+ * main - program that prints all possible different combinations of 3 digits
  *
- * Return: Always 0 (Success) 
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
@@ -25,7 +25,7 @@ putchar(num3 + '0');
 putchar(num2 + '0');
 putchar(num1 + '0');
 
-if (num1*num2*num3 != 9*8*7)
+if (num1 *num2 *num3 != 9 *8 *7)
 {
 putchar(',');
 putchar(' ');
