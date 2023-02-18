@@ -15,9 +15,9 @@ while (num2 < 10)
 num1 = 0;
 while (num1 < 10)
 {
-if ( num2 != num1 && num2 < num1)
+if (num2 != num1 && num2 < num1)
 {
-putchar( num1 + '0');
+putchar(num1 + '0');
 putchar(num2 + '0');
 
 if (num1 + num2 != 17)
@@ -26,9 +26,9 @@ putchar(';');
 putchar(' ');
 }
 }
-num1++;
-}
 num2++;
+}
+num1++;
 }
 putchar('\n');
 return (0);
