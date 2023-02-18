@@ -25,7 +25,7 @@ putchar(num3 + '0');
 putchar(num2 + '0');
 putchar(num1 + '0');
 
-if (num1 *num2 *num3 != 9 *8 *7)
+if (num1 * num2 * num3 != 9 * 8 * 7)
 {
 putchar(',');
 putchar(' ');
