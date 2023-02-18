@@ -26,7 +26,7 @@ putchar(';');
 putchar(' ');
 }
 }
-num1++
+num1++;
 }
 num2++;
 }
