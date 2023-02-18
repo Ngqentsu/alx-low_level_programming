@@ -1,19 +1,19 @@
 #include <stdio.h>
 
-/**                                                                                                                                                                     
- * main - program that prints all possible different combinations of 3 digits                                                                                           
- *                                                                                                                                                                      
- * Return: Always 0 (Success)                                                                                                                                           
+/**
+ * main - program that prints all possible different combinations of 2 two digits
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-int num1;
+int num1 = 0;
 int num2;
-int num3 = 0;
+int num3;
 
 int num11;
 int num22;
-int num33 = 0;
+int num33;
  
 while (num1 <= 98)
 {
