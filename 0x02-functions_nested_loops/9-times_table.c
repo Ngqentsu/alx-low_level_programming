@@ -16,7 +16,7 @@ _putchar(',');
 _putchar(' ');
 k = i * j;
 if (k <= 9)
-putchar(' ');
+_putchar(' ');
 else
 _putchar((k / 10) + '0');
 _putchar((k % 10) + '0');
