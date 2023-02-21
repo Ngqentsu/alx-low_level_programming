@@ -11,10 +11,9 @@ int i;
 int j;
 for (j = 1; j <= 10; j++)
 {
-for (i = 'a'; i = 'z'; i++)
+for (i = 'a'; i <= 'z'; i++)
 {
-_pitchar(i); 
+_putchar(i); 
 }
-_putchar('\n');
 }
- 
+ _putchar('\n');
