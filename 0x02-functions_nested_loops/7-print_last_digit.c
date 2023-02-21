@@ -5,7 +5,7 @@
  * @n: the passed integer
  * Return: Always 0.
  */
-int main(void)
+int print_last_digit(int n)
 {
 int i = n % 10;
 if (n < 0)
