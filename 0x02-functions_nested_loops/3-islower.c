@@ -5,7 +5,7 @@
  *
  * Return: Always 0.
  */
-int _isalpha(int c)
+int _islower(int c)
 {
 return (c >= 'a' && c <= 'z');
 }
