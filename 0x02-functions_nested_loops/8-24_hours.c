@@ -3,7 +3,6 @@
 /**
  * jack_bauer - prints every minute of the day
  *
- * Return: Always 0.
  */
 void jack_bauer(void)
 {
@@ -21,5 +20,5 @@ _putchar((j / 10) + '0');
 _putchar((j % 10) + '0');
 _putchar('\n');
 }
-return (0);
+}
 }
