@@ -12,7 +12,7 @@ unsigned long fib1 = 0, fib2 = 1, sum;
 for (i = 0; i < 50; i++)
 {
 sum = fib1 + fib2;
-printf("%zu", sum);
+printf("%lu", sum);
 fib1 = fib2;
 sum = fib2;
 if (i == 49)
@@ -21,6 +21,6 @@ printf("\n");
 }
 else
 printf(" , ");
-return (0);
 }
+return (0);
 }
