@@ -14,7 +14,7 @@ for (i = 0; i < 50; i++)
 sum = fib1 + fib2;
 printf("%lu", sum);
 fib1 = fib2;
-sum = fib2;
+fib2 = sum;
 if (i == 49)
 {
 printf("\n");
