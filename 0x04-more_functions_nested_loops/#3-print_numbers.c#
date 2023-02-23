@@ -1,0 +1,11 @@
+#include "main.h"
+
+/**
+ * print_numbers - checks for lowercase character
+ * @c: the character
+ * Return: 1 and 0 depending on the case.
+ */
+int _islower(int c)
+{
+return (c >= 'a' && c <= 'z');
+}
