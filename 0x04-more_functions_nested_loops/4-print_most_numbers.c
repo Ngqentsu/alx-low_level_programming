@@ -2,15 +2,15 @@
 
 /**
  * print_most_numbers - prints numbers except 2 and 4
- * @i: the integer
+ * @n: the character
  */
 void print_most_numbers(void)
 {
-int i;
-for (i = '0'; i <= '9'; i++)
+char n;
+for (n = '0'; n <= '9'; i++)
 {
-if (!( i == '2' || i == '4'))
-_putchar(i);
+if ( n != '2' || n != '4')
+_putchar(n);
 }
 _putchar('\n');
 }
