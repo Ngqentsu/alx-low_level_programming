@@ -7,13 +7,19 @@
  */
 int main(void)
 {
-int i;
-int maxp;
+long int i;
+long int maxp;
 long int n;
 
 n = 612852475143
+maxp = -1;
 
-for (i = 0; i <= sqrt(n); i = i + 2)
+while (n % 2 == 0)
+{
+maxp = 2;
+n /= 2;
+} 
+for (i = 3; i <= sqrt(n); i = i + 2)
 {
 while (n % i == 0)
 {
