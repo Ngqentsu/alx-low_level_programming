@@ -11,7 +11,7 @@ long int i;
 long int maxp;
 long int n;
 
-n = 612852475143
+n = 612852475143;
 maxp = -1;
 
 while (n % 2 == 0)
