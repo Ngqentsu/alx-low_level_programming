@@ -4,7 +4,7 @@
 /**
  * main - finds and prints the largest prime factor
  *
- * Return: Always 0.
+ * Return: Always 0 (Success).
  */
 int main(void)
 {
@@ -35,3 +35,4 @@ printf("%d\n", maxp);
 return (0);
 }
 }
+
