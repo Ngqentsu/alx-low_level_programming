@@ -12,8 +12,8 @@ n++;
 {
 if ((n %  2) == 0)
 _putchar(str[n]);
+}
 else
 continue;
-}
 _putchar('\n');
 }
