@@ -13,9 +13,9 @@ while (str[n] != '\0')
 {
 n++;
 }
-if ((n % 2) == 0)
+if (n % 2 == 0)
 {
-for (i = n / 2; str[i] != '\0'; n++)
+for (i = n / 2; str[i] != '\0'; i++)
 _putchar(str[i]);
 }
 else if (n % 2)
