@@ -11,11 +11,12 @@ int i = 0;
 int d = 0;
 int n = 0;
 int j = 0;
+int k = 0;
 
 while (s[n] != '\0')
 n++;
 
-while (i < len && f == 0)
+while (i < n && k == 0)
 {
 if (s[i] == '-')
 ++k;
