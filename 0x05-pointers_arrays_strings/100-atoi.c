@@ -35,8 +35,8 @@ j = 0;
 i++;
 }
 }
+}
 if (j == 0)
 return (0);
-}
 return (n);
 }
