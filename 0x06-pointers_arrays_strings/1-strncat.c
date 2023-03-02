@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * *_ - copies the string
+ * *_strncat - concatenates two strings, n bytes
  * @src: source
  * @dest: destination
- * Return: char
+ * @n: number of times char copied
+ * Return: pointer
  */
 char *_strcat(char *dest, char *src)
 {
@@ -15,7 +16,7 @@ while (dest[i] != '\0')
 {
 i++;
 }
-while (src[j] != '\0')
+while (j < n && src[j] != '\0')
 {
 dest[i] = src[j];
 i++;
