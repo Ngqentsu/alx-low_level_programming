@@ -11,10 +11,10 @@ int i;
 
 for (i = 0; p[i] != '\0'; i++)
 {
-if (n[i] >= 'a' && n[i] <= 'z')
+if (p[i] >= 'a' && p[i] <= 'z')
 {
-n[i] = n[i] - 32;
+p[i] = p[i] - 32;
 }
 }
-return (n);
+return (p);
 }
