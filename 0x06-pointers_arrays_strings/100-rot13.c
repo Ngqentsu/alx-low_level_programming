@@ -14,11 +14,12 @@ char s2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 for (i = 0; c[i] != '\0'; i++)
 {
-for (j = 0; j < 10; j++)
+for (j = 0; j < 52; j++)
 {
 if (c[i] == s1[j])
 {
 c[i] = s2[j];
+break;
 }
 }
 }
