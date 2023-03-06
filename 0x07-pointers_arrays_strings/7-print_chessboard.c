@@ -18,7 +18,7 @@ _putchar(a[i][j]);
 _putchar('\n');
 }
 else
-_putchar(a[i][j]);  
+_putchar(a[i][j]);
 }
 }
 }
