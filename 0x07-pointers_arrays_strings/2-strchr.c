@@ -12,8 +12,12 @@ int i;
 
 for (i = 0; s[i] != '\0'; i++)
 {
-if (s[i] == c)
-return (s + i);
+if (s[i] != c)
+s++;
+else
+return (s);
 }
+if (c == '\0')
+return (s);
 return ('\0');
 }
