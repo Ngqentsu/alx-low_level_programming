@@ -14,6 +14,10 @@ for (i = 0; i < size; i++)
 {
 sum1 += a[i];
 a += size;
+}
+a -= size;
+for (i = 0; i < size; i++)
+{
 sum2 += a[i];
 a -= size;
 }
