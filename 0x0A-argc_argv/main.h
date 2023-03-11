@@ -1,2 +1,2 @@
 int _putchar(char c);
-int atoi(char *s);
+int check_num(char *s);
