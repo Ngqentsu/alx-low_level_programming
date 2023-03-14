@@ -32,5 +32,5 @@ return (NULL);
 for (j = 0; j < width; j++)
 p[i][j] = 0;
 }
-return (mee);
+return (p);
 }
