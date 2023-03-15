@@ -10,37 +10,29 @@
 char *argstostr(int ac, char **av)
 {
 char *str;
-int i, j, k = 0, size = 0;
+int i, j, l = 0, k = 0;
 
 if (ac == 0 || av == NULL)
 return (NULL);
 
 for (i = 0; i < ac; i++)
 {
-j = 0;
-while (av[i][j])
-{
-size++;
-j++;
+for (j = 0; av[i][j]; j++)
+l++;
 }
-size++;
-}
-str = malloc((sizeof(char) * size) +1);
+l += ac;
+str = malloc((sizeof(char) * l) +1);
 if (str == NULL)
 return (NULL);
 for (i = 0; i < ac; i++)
 {
-j = 0;
-while (av[i][j])
+for (j = 0; av[i][j]; j++)
 {
 str[k] = av[i][j];
-j++;
 k++;
 }
-str[k] = '\n';
-i++;
-k++;
+if (str[k] == '\0')
+str[k++] = '\n';
 }
-str[k] = '\0';
 return (str);
 }
