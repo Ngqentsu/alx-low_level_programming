@@ -18,14 +18,17 @@ if (s2 == NULL)
 s2 = "";
 
 i = j = 0;
+while (s1[i] != '\0')
+{
+i++;
+}
 while (s2[j] != '\0')
 {
 j++;
 c = malloc(sizeof(char) * (i + j + 1));
-
+}
 if (c == NULL)
 return (NULL);
-}
 
 for (i = 0; s1[i] != '\0'; i++)
 {
@@ -35,5 +38,6 @@ for (j = 0; s1[j] != '\0'; j++)
 {
 c[i] = s2[j];
 }
+c[i] != '\0';
 return (c);
 }
