@@ -15,11 +15,14 @@ op_t ops[] = {
 {"/", op_div},
 {"%", op_mod},
 {NULL, NULL},
-}
+};
 
-int i;
-for (i = 0; ops[i].op != NULL && *(ops[i].op) != *s; i++)
+int j;
+j =0;
+
+while (ops[j].op != NULL && *(ops[j].op) != *s)
 {
-return (ops[i].f);
+return (ops[j].f);
+j++;
 }
 }

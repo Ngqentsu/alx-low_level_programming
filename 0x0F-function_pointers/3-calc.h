@@ -1,8 +1,12 @@
 #ifndef CALC_H
 #define CALC_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 /**
- * struct op - all the function prototypes and data structures
+ * struct op - struct op
  * @op: the operator
  * @f: the function associated
  */
