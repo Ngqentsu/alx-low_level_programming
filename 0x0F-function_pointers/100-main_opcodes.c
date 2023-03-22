@@ -29,7 +29,7 @@ for (i = 0; i < j; i++)
 {
 if (i == j - 1)
 {
-printf("%02x\n", c[i]);
+printf("%02hhx\n", c[i]);
 }
 }
 return (0);
