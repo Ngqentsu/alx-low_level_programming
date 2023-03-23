@@ -22,7 +22,8 @@ if (str)
 printf("%s", str);
 else
 printf("nil");
-if (i != (n - 1) && separator != NULL)
+if (i < n - 1)
+if (separator)
 printf("%s", separator);
 }
 printf("\n");
