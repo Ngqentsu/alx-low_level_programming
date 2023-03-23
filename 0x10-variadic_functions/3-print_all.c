@@ -22,13 +22,13 @@ while (format[i])
 switch (format[i])
 {
 case 'c':
-printf("%c", spc, va_arg(list, int));
+printf("%s%c", spc, va_arg(list, int));
 break;
 case 'i':
-printf("%d", spc, va_arg(list, int));
+printf("%s%d", spc, va_arg(list, int));
 break;
 case 'f':
-printf("%d", spc, va_arg(list, int));
+printf("%s%d", spc, va_arg(list, int));
 break;
 case 's':
 str = va_arg(list, char *);
