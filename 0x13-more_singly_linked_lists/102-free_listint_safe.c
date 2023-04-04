@@ -7,27 +7,30 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-size_t i, nodes = 0;
+size_t nodes = 0;
 listint_t *tmp;
+int dif;
 
-if (nodes == 0)
+if (h == NULL || (*h)->next == NULL)
+return (0);
+
+while (*h)
 {
-for (; h != NULL && *h != NULL; nodes++)
+dif = *h - (*h)->next;
+if (dif > 0)
 {
 tmp = (*(*h)).next;
 free(*h);
 *h = tmp;
-}
+nodes++;
 }
 else
 {
-for (i = 0; i < nodes ; i++)
-{
-tmp = (*(*h)).next;
 free(*h);
-*h = tmp;
-}
 *h = NULL;
+nodes++;
+break;
+}
 }
 *h = NULL;
 return (nodes);
