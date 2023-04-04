@@ -11,7 +11,7 @@ listint_t *tmp;
 while (head)
 {
 tmp = (*(*head)).next;
-free(head);
-head = NULL;
+free(*head);
+*head = NULL;
 }
 }
