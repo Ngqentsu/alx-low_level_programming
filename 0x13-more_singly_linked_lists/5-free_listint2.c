@@ -11,11 +11,11 @@ listint_t *tmp;
 if (head == NULL)
 return;
 
-while (head)
+while (*head)
 {
 tmp = (*(*head)).next;
 free(*head);
 *head = tmp;
 }
-*head = NULL;
+head = NULL;
 }
