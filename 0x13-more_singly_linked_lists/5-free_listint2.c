@@ -15,6 +15,7 @@ while (head)
 {
 tmp = (*(*head)).next;
 free(*head);
-*head = NULL;
+*head = tmp;
 }
+*head = NULL;
 }
