@@ -7,10 +7,15 @@
  */
 listint_t *reverse_listint(listint_t **head)
 {
-listint_t *trailing = NULL;
-listint_t *leading = NULL;
+listint_t *trailing;
+listint_t *leading;
 
-while (*head)
+if (head == NULL || *head == NULL)
+return (NULL);
+
+trailing = NULL;
+
+while ((*(*head)).next != NULL)
 {
 leading = (*(*head)).next;
 (*(*head)).next = trailing;
