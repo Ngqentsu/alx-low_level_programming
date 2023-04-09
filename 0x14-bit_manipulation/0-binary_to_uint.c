@@ -15,11 +15,8 @@ return (0);
 
 while (b[i] < '0' || b[i] > '1')
 {
-for (i = 0; b[i]; i++)
-{
 return (0);
 c = 2 * c + (b[i] - '0');
-}
 i++;
 }
 return (c);
