@@ -16,7 +16,7 @@ return (0);
 for (i = 0; b[i] < '0' || b[i] > '1'; i++)
 {
 return (0);
-c = 2 * c + (b[i] - '0');
+c = (b[i] - '0');
 }
 return (c);
 }
