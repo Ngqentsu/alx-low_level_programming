@@ -6,7 +6,19 @@
  */
 void print_binary(unsigned long int n)
 {
-if (n > 1)
-print_binary(n / 2);
-_putchar(n % 2);
+unsigned long int val;
+int i = 63, num = 0;
+
+while (i >= 0)
+{
+i--;
+val = n >> i;
+if (val & 1)
+{
+_putchar('1');
+num++;
+}
+else if (num)
+_putchar('0');
+}
 }
