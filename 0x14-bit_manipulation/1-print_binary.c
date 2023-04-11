@@ -9,6 +9,9 @@ void print_binary(unsigned long int n)
 unsigned long int val;
 int i = 63, num = 0;
 
+if (num == NULL)
+_putchar('0');
+
 while (i >= 0)
 {
 i--;
