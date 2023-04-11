@@ -8,15 +8,16 @@
 unsigned int binary_to_uint(const char *b)
 {
 unsigned int c = 0;
-int i;
+int i = 0;
 
 if (b == NULL)
 return (0);
 
-for (i = 0; b[i] < '0' || b[i] > '1'; i++)
+while (b[i] < '0' || b[i] > '1')
 {
-return (0);
-c = 2 * c + (b[i] - '0');
+c <<= 1;
+c += b[i]-'0';
+i++;
 }
 return (c);
 }
