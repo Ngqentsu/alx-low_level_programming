@@ -1,21 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <elf.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-
-void check_elf(unsigned char *e_ident);
-void print_magic(unsigned char *e_ident);
-void print_class(unsigned char *e_ident);
-void print_data(unsigned char *e_ident);
-void print_version(unsigned char *e_ident);
-void print_osabi(unsigned char *e_ident);
-void print_abi(unsigned char *e_ident);
-void print_type(unsigned int e_type, unsigned char *e_ident);
-void print_entry(unsigned long int e_entry, unsigned char *e_ident);
-void close_elf(int elf);
+#include "elf_header.h"
 
 /**
  * check_elf - Checks if a file is an ELF file
@@ -28,7 +11,7 @@ int i = 0;
 while (i < 4)
 {
 if (e_ident[i] != 127 && e_ident[i] != 'E' &&
-    e_ident[i] != 'L' && e_ident[i] != 'F')
+e_ident[i] != 'L' && e_ident[i] != 'F')
 {
 printf(STDERR_FILENO, "Error: The file is not an ELF file\n");
 exit(98);
@@ -151,9 +134,6 @@ break;
 case ELFOSABI_NETBSD:
 printf("UNIX - NetBSD\n");
 break;
-case ELFOSABI_GNU:
-printf("UNIX - GNU\n");
-break;
 case ELFOSABI_LINUX:
 printf("UNIX - Linux\n");
 break;
@@ -171,15 +151,6 @@ printf("UNIX - FreeBSD\n");
 break;
 case ELFOSABI_TRU64:
 printf("UNIX - Compaq TRU64\n");
-break;
-case ELFOSABI_MODESTO:
-printf("UNIX - Novell Modesto\n");
-break;
-case ELFOSABI_Open BSD:
-printf("UNIX - Open BSD\n");
-break;
-case ELFOSABI_Open VMS:
-printf("UNIX - Open VMS\n");
 break;
 case ELFOSABI_STANDALONE:
 printf("Standalone\n");
@@ -225,18 +196,6 @@ printf("DYN (Shared object file)\n");
 break;
 case ET_CORE:
 printf("CORE (Core file)\n");
-break;
-case ET_LOOS:
-printf("LOOS (Operating system-specific\n");
-break;
-case ET_HIOS:
-printf("HIOS (Operating system-specific)\n");
-break;
-case ET_LOPROC:
-printf("LOPROC (Processor-specific)\n");
-break;
-case ET_HIPROC:
-printf("HIPROC (Processor-specific)\n");
 break;
 default:
 printf("unknown: %x\n", e_type);
@@ -295,7 +254,7 @@ elf_header = malloc(sizeof(Elf64_Ehdr));
 
 if (op == -1 || rd == -1)
 {
-printf(STDERR_FILENO, "Error: The file is either non existant or unreadable %s\n", argv[1]);
+printf(STDERR_FILENO, "Error: The file does not exist %s\n", argv[1]);
 free(elf_header);
 close_elf(op);
 exit(98);
