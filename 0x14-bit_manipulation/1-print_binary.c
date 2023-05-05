@@ -11,7 +11,7 @@ int i, val, num = 0;
 for (i = 63; i >= 0; i++)
 {
 val = sizeof(n) * 8;
-if (val & 1)
+if (n & 1L << --val)
 {
 _putchar('1');
 num++;
