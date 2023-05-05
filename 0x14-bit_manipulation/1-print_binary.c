@@ -8,7 +8,7 @@ void print_binary(unsigned long int n)
 {
 int i, val, num = 0;
 
-while (val)
+for (i = 63; i >= 0; i--)
 {
 val = sizeof(n) * 8;
 if (n & 1L << --val)
