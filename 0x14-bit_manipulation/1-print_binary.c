@@ -6,21 +6,19 @@
  */
 void print_binary(unsigned long int n)
 {
-unsigned long int val;
-int i, num = 0;
+int i, val, num = 0;
 
-if (!num)
-_putchar('0');
-
-for (i = 0; i <= 63; i++)
+for (i = 63; i >= 0; i++)
 {
-val = n >> i;
-if (num)
+val = sizeof(n) * 8;
+if (val & 1)
 {
-_putchar('0');
+_putchar('1');
 num++;
 }
-else if (val & 1)
-_putchar('1');
+else if (num)
+_putchar('0');
 }
+if (!num)
+_putchar('0');
 }
