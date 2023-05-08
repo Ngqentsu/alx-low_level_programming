@@ -15,7 +15,7 @@ return (-1);
 
 if (text_content != NULL)
 {
-for (num = 0; text_content[num]; num++)
+for (num = 0; text_content[num];)
 num++;
 }
 
