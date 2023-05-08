@@ -16,18 +16,29 @@
  * @argv: An array of pointers
  * Return: 0 Always (Success)
  */
-int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int argc, char *argv[])
 {
 Elf64_Ehdr *elf_header;
 int op, rd;
 
-op = open(argv[1], O_RDONLY);
-rd = read(op, elf_header, sizeof(Elf64_Ehdr));
-elf_header = malloc(sizeof(Elf64_Ehdr));
-
-if (op == -1 || rd == -1)
+if (argc != 2)
 {
-fprintf(stderr, "Error: The file does not exist %s\n", argv[1]);
+fprintf(stderr, "Usage: %s <elf_file>\n", argv[0]);
+exit(1);
+}
+
+op = open(argv[1], O_RDONLY);
+if (op == -1)
+{
+fprintf(stderr, "Error: The file cannot be opened %s\n", argv[1]);
+}
+
+elf_header = malloc(sizeof(Elf64_Ehdr));
+rd = read(op, elf_header, sizeof(Elf64_Ehdr));
+
+if (rd == -1)
+{
+fprintf(stderr, "Error: Cannot read file %s\n", argv[1]);
 free(elf_header);
 close_elf(op);
 exit(98);
@@ -36,7 +47,7 @@ exit(98);
 if (elf_header == NULL)
 {
 close_elf(op);
-fprintf(stderr, "Error: Cannot read file %s\n", argv[1]);
+fprintf(stderr, "Error: The file does not exist %s\n", argv[1]);
 exit(98);
 }
 
