@@ -13,7 +13,7 @@ while (i < 4)
 if (e_ident[i] != 127 && e_ident[i] != 'E' &&
 e_ident[i] != 'L' && e_ident[i] != 'F')
 {
-printf(STDERR_FILENO, "Error: The file is not an ELF file\n");
+fprintf(stderr, "Error: The file is not an ELF file\n");
 exit(98);
 }
 i++;
@@ -214,14 +214,15 @@ printf("  Entry point address:               ");
 if (e_ident[EI_CLASS] == ELFCLASS32)
 {
 printf("%#x\n", (unsigned int)e_entry);
+}
 else
 printf("%#lx\n", e_entry);
-}
 
 if (e_ident[EI_DATA] == ELFDATA2MSB)
 {
 e_entry = ((e_entry << 8) & 0xFF00FF00) | ((e_entry >> 8) & 0xFF00FF);
 e_entry = (e_entry << 16) | (e_entry >> 16);
+}
 }
 
 /**
@@ -232,7 +233,7 @@ void close_elf(int elf)
 {
 if (close(elf) == -1)
 {
-printf(STDERR_FILENO, "Error: Can't close fd %d\n", elf);
+fprintf(stderr, "Error: Can't close fd %d\n", elf);
 exit(98);
 }
 }
@@ -249,12 +250,12 @@ Elf64_Ehdr *elf_header;
 int op, rd;
 
 op = open(argv[1], O_RDONLY);
-rd = read(op, header, sizeof(Elf64_Ehdr));
+rd = read(op, elf_header, sizeof(Elf64_Ehdr));
 elf_header = malloc(sizeof(Elf64_Ehdr));
 
 if (op == -1 || rd == -1)
 {
-printf(STDERR_FILENO, "Error: The file does not exist %s\n", argv[1]);
+fprintf(stderr, "Error: The file does not exist %s\n", argv[1]);
 free(elf_header);
 close_elf(op);
 exit(98);
@@ -263,7 +264,7 @@ exit(98);
 if (elf_header == NULL)
 {
 close_elf(op);
-printf(STDERR_FILENO, "Error: Cannot read file %s\n", argv[1]);
+fprintf(stderr, "Error: Cannot read file %s\n", argv[1]);
 exit(98);
 }
 
@@ -276,7 +277,7 @@ print_version((*elf_header).e_ident);
 print_osabi((*elf_header).e_ident);
 print_abi((*elf_header).e_ident);
 print_type((*elf_header).e_type, (*elf_header).e_ident);
-print_entry((*elf_header).e_entry, (*header).e_ident);
+print_entry((*elf_header).e_entry, (*elf_header).e_ident);
 
 free(elf_header);
 close_elf(op);
