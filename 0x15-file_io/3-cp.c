@@ -22,45 +22,30 @@ op = open(argv[1], O_RDONLY);
 fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 rd = read(op, buffer, 1024);
 wrt = write(fd, buffer, rd);
-if (op == -1)
+if (op == -1 || fd == -1)
 {
-dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
+dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv[1]);
 exit(98);
 }
-
-if (fd == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't write into file %s\n", argv[1]);
-exit(99);
-}
-
 buffer = malloc(1024 * sizeof(char));
 if (buffer == NULL)
 {
 dprintf(STDERR_FILENO, "Error: Failed to allocate memory\n");
-exit(100);
+exit(99);
 }
-
 while (rd > 0)
 {
 if (wrt != rd)
-{
 dprintf(STDERR_FILENO, "Error: Failed to write to file %s\n", argv[2]);
-free(buffer);
 exit(99);
 }
-}
-
 if (rd < 0)
 {
 dprintf(STDERR_FILENO, "Error: Failed to write to file %s\n", argv[2]);
-free(buffer);
 exit(98);
 }
-
 free(buffer);
 close(op);
 close(fd);
-
 return (0);
 }
