@@ -8,7 +8,7 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-dlistint_t *tmp;
+dlistint_t *prev;
 dlistint_t *cpnode = *head;
 unsigned int i = 0;
 
@@ -17,21 +17,29 @@ return (-1);
 
 if (index == 0)
 {
-*head = (*(*head)).next;
+*head = (*cpnode).next;
+
+if (cpnode->next != NULL)
+cpnode->next->prev = NULL;
 free(cpnode);
 return (1);
 }
 
-for (i = 0; i < index - 1; i++)
+for (i = 0; i < index; i++)
 {
+
+prev = cpnode;
+cpnode = (*cpnode).next;
+
 if ((*cpnode).next == NULL)
 return (-1);
-cpnode = cpnode->next;
 }
 
-tmp = (*cpnode).next;
-(*cpnode).next = tmp->next;
-free(tmp);
+prev->next = cpnode->next;
+
+if (cpnode->next != NULL)
+cpnode->next->prev = prev;
+free(cpnode);
 
 return (1);
 }
