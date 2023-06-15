@@ -29,10 +29,16 @@ return (new);
 for (i = 0; i < (idx - 1); i++)
 {
 if (tmp == NULL)
+{
+free(new);
 return (NULL);
-
+}
 tmp = (*tmp).next;
+}
+
 if (tmp == NULL)
+{
+free(new);
 return (NULL);
 }
 
