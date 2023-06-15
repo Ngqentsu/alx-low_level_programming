@@ -20,7 +20,7 @@ return NULL;
 
 if (*head != NULL)
 {
-(*head)->prev = new_node;
+(*head)->prev = new;
 }
 
 (*head) = new;
