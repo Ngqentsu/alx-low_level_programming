@@ -28,9 +28,12 @@ return (new);
 
 for (i = 0; i < (idx - 1); i++)
 {
-if (tmp == NULL || (*tmp).next == NULL)
+if (tmp == NULL)
 return (NULL);
+
 tmp = (*tmp).next;
+if (tmp == NULL)
+return (NULL);
 }
 
 new->next = tmp->next;
