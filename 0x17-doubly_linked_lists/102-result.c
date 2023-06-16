@@ -15,9 +15,7 @@ rev = rev * 10 + n % 10;
 n /= 10;
 }
 
-num = rev;
-
-return (num);
+return (num == rev);
 }
 
 int main(void)
