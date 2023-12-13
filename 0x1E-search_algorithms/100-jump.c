@@ -17,25 +17,23 @@ return (-1);
 
 jump_step = sqrt(size);
 
-for (i = 0; i < size; i += jump_step)
+for (i = 0; i < size && array[i] < value; i += jump_step)
 {
-printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-if (array[i] >= value || i + jump_step >= size)
-break;
+printf("Value checked array[%lu] = [%d]\n", i, array[i]);
 }
 
-printf("Value found between indexes [%ld] and [%ld]\n", i - jump_step, i);
+printf("Value found between indexes [%lu] and [%lu]\n", i - jump_step, i);
 
 while (i > 0 && array[i - 1] < value)
 {
-printf("Value checked array[%ld] = [%d]\n", i - 1, array[i - 1]);
+printf("Value checked array[%lu] = [%d]\n", i - 1, array[i - 1]);
 i--;
 }
 
-for (; i < size && array[i] < value; i++)
+for (i = 0; i < size && i < jump_step && array[i] < value; i += jump_step)
 {
-printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+printf("Value checked array[%lu] = [%d]\n", i, array[i]);
 }
 
-return (i < size && array[i] == value) ? (int)i : -1;
+return (array[i - 1] == value ? (int)(i - 1) : -1);
 }
