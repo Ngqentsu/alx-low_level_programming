@@ -21,9 +21,10 @@ size_t i, low, mid, high;
 		printf("Searching in array: ");
 		for (i = 0; i < size; i++)
 			printf("%d, ", array[i]);
-		printf("%d\n", array[i]);
+		printf("%d\n", array[size - i]);
 
-		mid = (low + high) / 2;
+		mid = low + (high - low) / 2;
+
 		if (array[mid] == value)
 			return (mid);
 
