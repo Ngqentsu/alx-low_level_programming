@@ -20,13 +20,7 @@ int interpolation_search(int *array, size_t size, int value)
 		double fraction = (double)(high - low) / (array[high] - array[low]);
 
 		i = low + (fraction * (value - array[low]));
-		if (i < size)
-			printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-		else
-		{
-			printf("Value checked array[%ld] is out of range\n", i);
-			break;
-		}
+		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 
 		if (array[i] == value)
 			return (i);
@@ -35,6 +29,7 @@ int interpolation_search(int *array, size_t size, int value)
 		else
 			low = i + 1;
 	}
+	printf("Value checked array[%ld] is out of range\n", i);
 
 	return (-1);
 }
